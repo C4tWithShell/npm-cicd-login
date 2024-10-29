@@ -1,0 +1,19 @@
+{
+  "name": "npm-cicd-login",
+  "version": "1.0.0",
+  "description": "Login into NPM within CI/CD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/C4tWithShell/npm-cicd-login.git"
+  },
+  "author": "Vladimir Shelkovnikov <c4twithfish@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/C4tWithShell/npm-cicd-login/issues"
+  },
+  "homepage": "https://github.com/C4tWithShell/npm-cicd-login#readme"
+}
