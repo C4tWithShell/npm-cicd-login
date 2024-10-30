@@ -18,12 +18,12 @@ const validate = ({ username, password, email }) => {
   }
 };
 
-const login = ({ username, password, email, scope, registry }) => {
+const login = ({ username, password, email, scope, registry, token }) => {
   validate({ username, password, email });
-  console.log(username, password, email, scope, registry)
   // Set npm config for authentication
   const npmConfigCommands = [
     `config set ${scope ? `${scope}:` : ''}username=${username}`,
+    token ? `config set //registry.npmjs.org/:_authToken=${token}` : null,
     `config set ${scope ? `${scope}:` : ''}_authToken=${Buffer.from(
       `${username}:${password}`
     ).toString("base64")}`,
@@ -41,5 +41,6 @@ login({
   password: process.env.NPM_PASSWORD,
   email: process.env.NPM_EMAIL,
   scope: process.env.NPM_SCOPE,
-  registry: process.env.NPM_REGISTRY
+  registry: process.env.NPM_REGISTRY,
+  token: process.env.NPM_TOKEN
 });
